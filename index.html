@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interactive rating component</title>
-
-    <link rel="stylesheet" href="css/style.css" />
-    <script defer src="js/script.js"></script>
-  </head>
-  <body>
-    <main class="rating">
-      <div class="rating__icon-container">
-        <img
-          src="images/icon-star.svg"
-          alt="A star icon"
-          class="rating__icon"
-        />
-      </div>
-      <h1 class="rating__title">How did we do?</h1>
-      <p class="rating__text">
-        Please let us know how we did with your support request. All feedback is
-        appreciated to help us improve our offering!
-      </p>
-      <form action="#" method="post" class="rating__form" id="rating-form">
-        <div class="rating__form-radios">
-          <label>
-            <input type="radio" name="score" value="1" />
-            <span>1</span>
-          </label>
-          <label>
-            <input type="radio" name="score" value="2" />
-            <span>2</span>
-          </label>
-          <label>
-            <input type="radio" name="score" value="3" />
-            <span>3</span>
-          </label>
-          <label>
-            <input type="radio" name="score" value="4" />
-            <span>4</span>
-          </label>
-          <label>
-            <input type="radio" name="score" value="5" />
-            <span>5</span>
-          </label>
-        </div>
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </main>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interactive rating component</title>
+        <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script defer src="js/script.js"></script>
+    </head>
+    <body>
+        <main class="rating">
+            <div class="rating__icon-container">
+                <img src="images/icon-star.svg" alt="A star icon" class="rating__icon" />
+            </div>
+            <h1 class="rating__title">How did we do?</h1>
+            <p class="rating__text">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+            <form action="#" method="post" class="rating__form" id="rating-form">
+                <div class="rating__form-radios">
+                    <label>
+                        <input class="rating__form-radio" type="radio" name="score" value="1" />
+                        <span>1</span>
+                    </label>
+                    <label>
+                        <input class="rating__form-radio" type="radio" name="score" value="2" />
+                        <span>2</span>
+                    </label>
+                    <label>
+                        <input class="rating__form-radio" type="radio" name="score" value="3" />
+                        <span>3</span>
+                    </label>
+                    <label>
+                        <input class="rating__form-radio" type="radio" name="score" value="4" />
+                        <span>4</span>
+                    </label>
+                    <label>
+                        <input class="rating__form-radio" type="radio" name="score" value="5" />
+                        <span>5</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </main>
+    </body>
 </html>

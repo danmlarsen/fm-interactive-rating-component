@@ -1,0 +1,101 @@
+.rating {
+    max-width: 36rem;
+    min-height: 37rem;
+    background-color: $color-natural-500;
+    color: $color-natural-100;
+    padding: 2.4rem 2rem 3.2rem;
+    border-radius: 19px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+
+    &--completed {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__icon-container {
+        padding: 1.6rem;
+        background-color: $color-natural-400;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+
+    &__icon {
+        width: 13px;
+        height: 13px;
+    }
+
+    &__selected-rating-text {
+        color: $color-primary;
+        background-color: $color-natural-400;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__form-radios {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__form-radios input:checked + span,
+    &__form-radios input:hover + span {
+        color: $color-natural-500;
+    }
+
+    &__form-radios label {
+        position: relative;
+        height: 4.5rem;
+    }
+
+    &__form-radios label span {
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        font-weight: $fw-bold;
+        color: $color-natural-300;
+        overflow: hidden;
+    }
+
+    &__form-error {
+        color: $color-error;
+    }
+
+    &__form-radio {
+        appearance: none;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background-color: $color-natural-400;
+        transform: translateY(-0.075em);
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover,
+        &:focus {
+            background-color: $color-primary;
+        }
+
+        &:checked {
+            background-color: $color-natural-100;
+            animation: scaleUpDown 0.25s ease-in;
+        }
+    }
+}

@@ -1,13 +1,61 @@
-@import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Overpass", sans-serif;
-  font-size: 1.4rem;
+  min-height: 100vh;
+  line-height: 1.5;
   background-color: hsl(216, 12%, 8%);
   padding: 2.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.4rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-wrap: break-word;
 }
 
 h1 {
@@ -20,11 +68,8 @@ p {
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
   width: 100%;
+  line-height: 1;
   background-color: hsl(25, 97%, 53%);
   color: hsl(216, 12%, 8%);
   border: none;
@@ -36,9 +81,18 @@ p {
   padding: 1.6rem 3.2rem 1.4rem;
   cursor: pointer;
   transition: all 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.btn:active, .btn:hover {
+.btn:active, .btn:hover, .btn:focus {
   background-color: hsl(0, 0%, 100%);
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .rating {
@@ -59,19 +113,16 @@ p {
   justify-content: center;
   text-align: center;
 }
-
 .rating__icon-container {
   padding: 1.6rem;
   background-color: hsl(213, 14%, 23%);
   border-radius: 50%;
   margin-bottom: 1rem;
 }
-
 .rating__icon {
   width: 13px;
   height: 13px;
 }
-
 .rating__selected-rating-text {
   color: hsl(25, 97%, 53%);
   background-color: hsl(213, 14%, 23%);
@@ -80,48 +131,24 @@ p {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
-
 .rating__form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-
 .rating__form-radios {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-input[type=radio] {
-  appearance: none;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  background-color: hsl(213, 14%, 23%);
-  transform: translateY(-0.075em);
-  cursor: pointer;
-  transition: all 0.3s;
-}
-input[type=radio]:hover {
-  background-color: hsl(25, 97%, 53%);
-}
-input[type=radio]:checked {
-  background-color: hsl(0, 0%, 100%);
-  animation: scaleUpDown 0.25s ease-in;
-}
-
-.rating__form-radios input:checked + span,
-.rating__form-radios input:hover + span {
+.rating__form-radios input:checked + span, .rating__form-radios input:hover + span {
   color: hsl(213, 19%, 18%);
 }
-
 .rating__form-radios label {
   position: relative;
   height: 4.5rem;
 }
-
 .rating__form-radios label span {
   position: absolute;
   display: block;
@@ -133,18 +160,25 @@ input[type=radio]:checked {
   color: hsl(217, 12%, 63%);
   overflow: hidden;
 }
-
 .rating__form-error {
   color: hsl(0, 60%, 60%);
 }
-
-@keyframes scaleUpDown {
-  from {
-    transform: scale(1.2) translateY(-0.075em);
-  }
-  to {
-    transform: scale(1) translateY(-0.075em);
-  }
+.rating__form-radio {
+  appearance: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: hsl(213, 14%, 23%);
+  transform: translateY(-0.075em);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.rating__form-radio:hover, .rating__form-radio:focus {
+  background-color: hsl(25, 97%, 53%);
+}
+.rating__form-radio:checked {
+  background-color: hsl(0, 0%, 100%);
+  animation: scaleUpDown 0.25s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */

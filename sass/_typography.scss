@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: $ff-primary;
+    font-size: $fs-400;
+    -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: $fs-800;
+    line-height: 1;
+}
+
+p {
+    color: $color-natural-300;
+}
