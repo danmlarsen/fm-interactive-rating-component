@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+@keyframes scaleUpDown {
+  from {
+    transform: scale(1.2) translateY(-0.075em);
+  }
+  to {
+    transform: scale(1) translateY(-0.075em);
+  }
+}
 *,
 *::before,
 *::after {
