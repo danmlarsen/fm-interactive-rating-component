@@ -26,7 +26,7 @@ p {
   line-height: 1;
   width: 100%;
   background-color: hsl(25, 97%, 53%);
-  color: hsl(213, 19%, 18%);
+  color: hsl(216, 12%, 8%);
   border: none;
   border-radius: 100px;
   text-transform: uppercase;
@@ -35,17 +35,20 @@ p {
   font-size: 1.4rem;
   padding: 1.6rem 3.2rem 1.4rem;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .btn:active, .btn:hover {
   background-color: hsl(0, 0%, 100%);
 }
 
 .rating {
-  max-width: 50rem;
+  max-width: 36rem;
+  min-height: 37rem;
   background-color: hsl(213, 19%, 18%);
   color: hsl(0, 0%, 100%);
   padding: 2.4rem 2rem 3.2rem;
-  border-radius: 15px;
+  border-radius: 19px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -53,13 +56,15 @@ p {
 }
 .rating--completed {
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .rating__icon-container {
-  padding: 1.2rem;
+  padding: 1.6rem;
   background-color: hsl(213, 14%, 23%);
   border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 .rating__icon {
@@ -73,6 +78,7 @@ p {
   padding: 0.5rem 1rem;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .rating__form {
@@ -90,18 +96,20 @@ p {
 
 input[type=radio] {
   appearance: none;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   background-color: hsl(213, 14%, 23%);
   transform: translateY(-0.075em);
   cursor: pointer;
+  transition: all 0.3s;
 }
 input[type=radio]:hover {
   background-color: hsl(25, 97%, 53%);
 }
 input[type=radio]:checked {
   background-color: hsl(0, 0%, 100%);
+  animation: scaleUpDown 0.25s ease-in;
 }
 
 .rating__form-radios input:checked + span,
@@ -111,7 +119,7 @@ input[type=radio]:checked {
 
 .rating__form-radios label {
   position: relative;
-  height: 4.2rem;
+  height: 4.5rem;
 }
 
 .rating__form-radios label span {
@@ -124,6 +132,19 @@ input[type=radio]:checked {
   font-weight: 700;
   color: hsl(217, 12%, 63%);
   overflow: hidden;
+}
+
+.rating__form-error {
+  color: hsl(0, 60%, 60%);
+}
+
+@keyframes scaleUpDown {
+  from {
+    transform: scale(1.2) translateY(-0.075em);
+  }
+  to {
+    transform: scale(1) translateY(-0.075em);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,7 @@
 const mainEl = document.querySelector("main");
 const formEl = document.getElementById("rating-form");
 
-formEl.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const formData = new FormData(e.target);
-  const data = Object.fromEntries(formData);
-
+const renderThankYou = function (data) {
   const { score } = data;
 
   mainEl.innerHTML = `
@@ -24,4 +19,27 @@ formEl.addEventListener("submit", (e) => {
     `;
 
   mainEl.classList.add("rating--completed");
-});
+};
+
+const renderError = function (error) {
+  if (formEl.querySelector(".rating__form-error")) return;
+
+  formEl.insertAdjacentHTML(
+    "afterbegin",
+    `<p class="rating__form-error">${error}</p>`
+  );
+};
+
+const handleSubmit = function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+
+  if (!data?.score || data.score < 1 || data.score > 5)
+    return renderError("Please pick a rating before submitting.");
+
+  renderThankYou(data);
+};
+
+formEl.addEventListener("submit", handleSubmit);
